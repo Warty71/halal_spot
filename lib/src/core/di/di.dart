@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:halal_spot/src/core/theme/theme_cubit.dart';
+import 'package:halal_spot/src/features/places/presentation/cubit/places_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -45,8 +46,7 @@ Future<void> _initializeCubits() async {
   // getIt.registerFactory<RegisterCubit>(() => RegisterCubit(getIt()));
   
   // Feature cubits
-  // getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt()));
-  // getIt.registerFactory<ProfileCubit>(() => ProfileCubit(getIt()));
+  getIt.registerFactory<PlacesCubit>(() => PlacesCubit());
   
   // Global cubits
   getIt.registerFactory<ThemeCubit>(() => ThemeCubit());

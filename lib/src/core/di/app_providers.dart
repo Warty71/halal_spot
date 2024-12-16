@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:halal_spot/src/core/di/di.dart';
 import 'package:halal_spot/src/core/theme/theme_cubit.dart';
+import 'package:halal_spot/src/features/places/presentation/cubit/places_cubit.dart';
 
 class AppProviders extends StatelessWidget {
   const AppProviders({
@@ -16,6 +17,7 @@ class AppProviders extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => getIt<ThemeCubit>()),
+        BlocProvider(create: (_) => getIt<PlacesCubit>()),
       ],
       child: child,
     );
